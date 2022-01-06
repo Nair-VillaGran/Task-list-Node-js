@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="card card-body bg-dark p-4 text-white">
+        <h3>Edit task</h3>
+        <form action="/edit/{{task._id}}" method="post">
+
+          <div>
+            <label for="title">Write the new title:</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              id="title"
+              value="{{task.title}}"
+              class="form-control rounded-0 bg-dark text-white"
+            />
+          </div><br />
+
+          <div>
+            <label for="description">Write the new description:</label>
+            <textarea
+              name="description"
+              placeholder="Description"
+              id="description"
+              class="form-control rounded-0 bg-dark text-white"
+            >{{task.description}}</textarea>
+          </div><br>
+
+          <div>
+            <label for="important">Select new priority level</label>
+            <select
+              name="important"
+              class="form-select rounded-0 bg-dark text-white"
+              aria-label="Default select example"
+              id="important"
+            >
+              <option value="Important" selected>Important</option>
+              <option value="Urgent">Urgent</option>
+            </select>
+          </div>
+
+          <button class="btn btn-danger btn-sm mt-2">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
